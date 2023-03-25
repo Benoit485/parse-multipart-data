@@ -179,17 +179,25 @@ function process(part: Part): Input {
   let input = {}
   if (filenameData) {
     input = obj(filenameData)
-    const contentType = part.contentTypeHeader.split(':')[1].trim()
-    Object.defineProperty(input, 'type', {
-      value: contentType,
-      writable: true,
-      enumerable: true,
-      configurable: true
-    })
   }
+
+  let contentType = '';
+
+  if(part.contentTypeHeader?.indexOf(':') > -1) {
+
+    contentType = part.contentTypeHeader.split(':')[1].trim()
+  }
+
   // always process the name field
   Object.defineProperty(input, 'name', {
     value: header[1].split('=')[1].replace(/"/g, ''),
+    writable: true,
+    enumerable: true,
+    configurable: true
+  })
+
+  Object.defineProperty(input, 'type', {
+    value: contentType,
     writable: true,
     enumerable: true,
     configurable: true

@@ -1,5 +1,8 @@
 # parse-multipart-data
 
+Forked from [nachomazzara/parse-multipart-data](https://github.com/nachomazzara/parse-multipart-data)
+and add type on name (without needed filename)
+
 A Typescript lib multipart/form-data parser which operates on raw data.
 Forked from [freesoftwarefactory/parse-multipart](https://github.com/freesoftwarefactory/parse-multipart)
 
