@@ -1,6 +1,6 @@
 {
   "name": "parse-multipart-data",
-  "version": "0.0.0-development",
+  "version": "0.0.1-development",
   "description":
     "A javascript/nodejs multipart/form-data parser which operates on raw data.",
   "main": "dist/multipart.js",
